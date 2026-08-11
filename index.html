@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<title>Ashish Varma | Digital Card</title>
+<meta name="description" content="Ashish Varma - Personal Digital Card">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;min-height:100vh;background:linear-gradient(145deg,#111827,#1f2937,#374151);color:#fff;padding:22px 14px}
+.card{width:min(100%,430px);margin:auto;overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:28px;background:rgba(255,255,255,.08);backdrop-filter:blur(18px);box-shadow:0 25px 70px rgba(0,0,0,.35)}
+.cover{height:125px;background:linear-gradient(135deg,#2563eb,#7c3aed)}
+.profile{text-align:center;padding:0 24px 24px}
+.photo{width:112px;height:112px;border-radius:50%;margin:-56px auto 14px;border:5px solid #202938;background:#e5e7eb;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+h1{font-size:28px}.role{margin-top:6px;color:#d1d5db;font-size:15px}.company{margin-top:3px;color:#9ca3af;font-size:14px}
+.about{margin:18px 0;padding:14px 15px;border-radius:16px;background:rgba(0,0,0,.16);color:#e5e7eb;font-size:14px;line-height:1.55}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{text-decoration:none;color:#fff;padding:13px 10px;border-radius:14px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.1);font-weight:700;font-size:14px}
+.primary{background:#2563eb}.save{width:100%;margin-top:12px;border:0;cursor:pointer;background:#fff;color:#111827;font-weight:800;padding:14px;border-radius:14px;font-size:15px}
+.socials{display:flex;justify-content:center;gap:12px;margin-top:18px}.socials a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;background:rgba(255,255,255,.11);font-weight:800;font-size:13px}
+.section{padding:20px 24px;border-top:1px solid rgba(255,255,255,.09)}.section h2{font-size:16px;margin-bottom:12px}
+.info{display:flex;gap:12px;align-items:center;padding:11px 0;color:#e5e7eb;font-size:14px}.icon{width:30px;text-align:center}
+.footer{text-align:center;padding:18px;color:#9ca3af;font-size:12px}
+@media(max-width:360px){.actions{grid-template-columns:1fr}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="cover"></div>
+<section class="profile">
+<div class="photo"><img src="profile.png" alt="Ashish Varma"></div>
+<h1>Ashish Varma</h1>
+<p class="role">HR Professional / MBA Student</p>
+<p class="company">Your Company Name</p>
+<div class="about">Welcome to my digital card. Connect with me through my phone, WhatsApp and social profiles.</div>
+<div class="actions">
+<a class="btn primary" href="tel:+917887400816">📞 Call</a>
+<a class="btn" href="https://wa.me/917887400816" target="_blank">💬 WhatsApp</a>
+<a class="btn" href="mailto:ashishverma6389@gmail.com">✉️ Email</a>
+<a class="btn" href="https://www.linkedin.com/in/ashish-varma-8894853b4" target="_blank">💼 LinkedIn</a>
+</div>
+<button class="save" onclick="saveContact()">📇 Save Contact</button>
+<div class="socials">
+<a href="https://www.instagram.com/__ashu_1137" target="_blank">IG</a>
+<a href="https://www.facebook.com/" target="_blank">FB</a>
+<a href="https://www.linkedin.com/in/ashish-varma-8894853b4" target="_blank">in</a>
+</div>
+</section>
+<section class="section">
+<h2>Contact</h2>
+<div class="info"><span class="icon">📱</span><span>+91 78874 00816</span></div>
+<div class="info"><span class="icon">✉️</span><span>ashishverma6389@gmail.com</span></div>
+<div class="info"><span class="icon">📍</span><span>Pune, Maharashtra, India</span></div>
+</section>
+<div class="footer">Digital Card • Ashish Varma</div>
+</main>
+<script>
+function saveContact(){
+const vcard=["BEGIN:VCARD","VERSION:3.0","FN:Ashish Varma","TITLE:HR Professional / MBA Student","TEL;TYPE=CELL:+917887400816","EMAIL:ashishverma6389@gmail.com","URL:https://www.linkedin.com/in/ashish-varma-8894853b4","END:VCARD"].join("\r\n");
+const blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});const url=URL.createObjectURL(blob);
+const a=document.createElement("a");a.href=url;a.download="Ashish-Varma.vcf";a.click();URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
